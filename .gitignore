@@ -64,7 +64,7 @@ artifacts/
 
 # Tye
 .tye/
-
+**/migrations
 # ASP.NET Scaffolding
 ScaffoldingReadMe.txt
 
@@ -123,7 +123,7 @@ ipch/
 
 # Visual Studio Trace Files
 *.e2e
-
+*.db*
 # TFS 2012 Local Workspace
 $tf/
 
