@@ -1,8 +1,70 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model HomeViewModel
+<div class="row">
+    <div class="col-12 mt-3 mb-1">
+        <h4>School App Main Page</h4>
+        <p>Some basic statistics</p>
+    </div>
+</div>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="row">
+    <div class="col-xl-6 col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <a href="" style="text-decoration:none;color: black;">
+                    <h4> <i class="fa fa-graduation-cap"></i> Students</h4>
+                </a>
+
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Total Student Count: @Model.StudentCount</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-6 col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <a href="" style="text-decoration:none;color: black;">
+                    <h4><i class="fa fa-user-circle"></i> Lecturers</h4>
+                </a>
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Total Lecturer Count: @Model.LecturerCount</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-xl-6 col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <a href="" style="text-decoration:none;color: black;">
+                    <h4><i class="fa fa-folder-open"></i> Courses</h4>
+                </a>
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Total Course Count: @Model.CourseCount</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-6 col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <a href="" style="text-decoration:none;color: black;">
+                    <h4><i class="fa fa-tasks"></i> Enrolments</h4>
+                </a>
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Total Enrolment Count: @Model.EnrolmentCount</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
