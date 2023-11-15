@@ -1,0 +1,302 @@
+@model IEnumerable<Student>
+
+
+    <h1>Students</h1>
+
+    <p class="text-end">
+        <a asp-action="Create" class="btn btn-secondary"><i class="fa-solid fa-plus"></i> Create New</a>
+    </p>
+    <table class="table table-hover table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LastName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SchoolEnrollementDate)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var student in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => student.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => student.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => student.SchoolEnrollementDate)
+                </td>
+                <td>
+                    <div class="button-group" role="group" aria-label="Student Actions">
+                        <a class="custom-btn edit-btn" asp-action="Edit" asp-route-id="@student.Id">
+                            <i class="fas fa-edit"></i> Edit
+                        </a>
+                        <a class="custom-btn details-btn" asp-action="Details" asp-route-id="@student.Id">
+                            <i class="fa fa-info-circle"></i> Details
+                        </a>
+                        <button data-id="@student.Id" class="custom-btn deleteBtn" type="button">
+                            <i class="fa fa-trash"></i> Delete
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            } @foreach (var student in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => student.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => student.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => student.SchoolEnrollementDate)
+                </td>
+                <td>
+                    <div class="button-group" role="group" aria-label="Student Actions">
+                        <a class="custom-btn edit-btn" asp-action="Edit" asp-route-id="@student.Id">
+                            <i class="fas fa-edit"></i> Edit
+                        </a>
+                        <a class="custom-btn details-btn" asp-action="Details" asp-route-id="@student.Id">
+                            <i class="fa fa-info-circle"></i> Details
+                        </a>
+                        <button data-id="@student.Id" class="custom-btn deleteBtn" type="button">
+                            <i class="fa fa-trash"></i> Delete
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            } @foreach (var student in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => student.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => student.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => student.SchoolEnrollementDate)
+                </td>
+                <td>
+                    <div class="button-group" role="group" aria-label="Student Actions">
+                        <a class="custom-btn edit-btn" asp-action="Edit" asp-route-id="@student.Id">
+                            <i class="fas fa-edit"></i> Edit
+                        </a>
+                        <a class="custom-btn details-btn" asp-action="Details" asp-route-id="@student.Id">
+                            <i class="fa fa-info-circle"></i> Details
+                        </a>
+                        <button data-id="@student.Id" class="custom-btn deleteBtn" type="button">
+                            <i class="fa fa-trash"></i> Delete
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            } @foreach (var student in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => student.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => student.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => student.SchoolEnrollementDate)
+                </td>
+                <td>
+                    <div class="button-group" role="group" aria-label="Student Actions">
+                        <a class="custom-btn edit-btn" asp-action="Edit" asp-route-id="@student.Id">
+                            <i class="fas fa-edit"></i> Edit
+                        </a>
+                        <a class="custom-btn details-btn" asp-action="Details" asp-route-id="@student.Id">
+                            <i class="fa fa-info-circle"></i> Details
+                        </a>
+                        <button data-id="@student.Id" class="custom-btn deleteBtn" type="button">
+                            <i class="fa fa-trash"></i> Delete
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            } @foreach (var student in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => student.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => student.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => student.SchoolEnrollementDate)
+                </td>
+                <td>
+                    <div class="button-group" role="group" aria-label="Student Actions">
+                        <a class="custom-btn edit-btn" asp-action="Edit" asp-route-id="@student.Id">
+                            <i class="fas fa-edit"></i> Edit
+                        </a>
+                        <a class="custom-btn details-btn" asp-action="Details" asp-route-id="@student.Id">
+                            <i class="fa fa-info-circle"></i> Details
+                        </a>
+                        <button data-id="@student.Id" class="custom-btn deleteBtn" type="button">
+                            <i class="fa fa-trash"></i> Delete
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            } @foreach (var student in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => student.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => student.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => student.SchoolEnrollementDate)
+                </td>
+                <td>
+                    <div class="button-group" role="group" aria-label="Student Actions">
+                        <a class="custom-btn edit-btn" asp-action="Edit" asp-route-id="@student.Id">
+                            <i class="fas fa-edit"></i> Edit
+                        </a>
+                        <a class="custom-btn details-btn" asp-action="Details" asp-route-id="@student.Id">
+                            <i class="fa fa-info-circle"></i> Details
+                        </a>
+                        <button data-id="@student.Id" class="custom-btn deleteBtn" type="button">
+                            <i class="fa fa-trash"></i> Delete
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            } @foreach (var student in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => student.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => student.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => student.SchoolEnrollementDate)
+                </td>
+                <td>
+                    <div class="button-group" role="group" aria-label="Student Actions">
+                        <a class="custom-btn edit-btn" asp-action="Edit" asp-route-id="@student.Id">
+                            <i class="fas fa-edit"></i> Edit
+                        </a>
+                        <a class="custom-btn details-btn" asp-action="Details" asp-route-id="@student.Id">
+                            <i class="fa fa-info-circle"></i> Details
+                        </a>
+                        <button data-id="@student.Id" class="custom-btn deleteBtn" type="button">
+                            <i class="fa fa-trash"></i> Delete
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            } @foreach (var student in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => student.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => student.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => student.SchoolEnrollementDate)
+                </td>
+                <td>
+                    <div class="button-group" role="group" aria-label="Student Actions">
+                        <a class="custom-btn edit-btn" asp-action="Edit" asp-route-id="@student.Id">
+                            <i class="fas fa-edit"></i> Edit
+                        </a>
+                        <a class="custom-btn details-btn" asp-action="Details" asp-route-id="@student.Id">
+                            <i class="fa fa-info-circle"></i> Details
+                        </a>
+                        <button data-id="@student.Id" class="custom-btn deleteBtn" type="button">
+                            <i class="fa fa-trash"></i> Delete
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            } @foreach (var student in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => student.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => student.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => student.SchoolEnrollementDate)
+                </td>
+                <td>
+                    <div class="button-group" role="group" aria-label="Student Actions">
+                        <a class="custom-btn edit-btn" asp-action="Edit" asp-route-id="@student.Id">
+                            <i class="fas fa-edit"></i> Edit
+                        </a>
+                        <a class="custom-btn details-btn" asp-action="Details" asp-route-id="@student.Id">
+                            <i class="fa fa-info-circle"></i> Details
+                        </a>
+                        <button data-id="@student.Id" class="custom-btn deleteBtn" type="button">
+                            <i class="fa fa-trash"></i> Delete
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            } @foreach (var student in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => student.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => student.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => student.SchoolEnrollementDate)
+                </td>
+                <td>
+                    <div class="button-group" role="group" aria-label="Student Actions">
+                        <a class="custom-btn edit-btn" asp-action="Edit" asp-route-id="@student.Id">
+                            <i class="fas fa-edit"></i> Edit
+                        </a>
+                        <a class="custom-btn details-btn" asp-action="Details" asp-route-id="@student.Id">
+                            <i class="fa fa-info-circle"></i> Details
+                        </a>
+                        <button data-id="@student.Id" class="custom-btn deleteBtn" type="button">
+                            <i class="fa fa-trash"></i> Delete
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            } @foreach (var student in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => student.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => student.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => student.SchoolEnrollementDate)
+                </td>
+                <td>
+                    <div class="button-group" role="group" aria-label="Student Actions">
+                        <a class="custom-btn edit-btn" asp-action="Edit" asp-route-id="@student.Id">
+                            <i class="fas fa-edit"></i> Edit
+                        </a>
+                        <a class="custom-btn details-btn" asp-action="Details" asp-route-id="@student.Id">
+                            <i class="fa fa-info-circle"></i> Details
+                        </a>
+                        <button data-id="@student.Id" class="custom-btn deleteBtn" type="button">
+                            <i class="fa fa-trash"></i> Delete
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>

@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using SchoolApp.Data.Abstract;
 using SchoolApp.Entity;
 

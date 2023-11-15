@@ -11,5 +11,11 @@ namespace SchoolApp.Entity
         public int? Credit { get; set; }
         public Lecturer Lecturer { get; set; } = null!;
         public ICollection<Enrollment> Enrollments { get; } = new List<Enrollment>();
+
+        public override string ToString()
+        {
+            return $"{Code}-{Name}";
+        }
+
     }
 }
