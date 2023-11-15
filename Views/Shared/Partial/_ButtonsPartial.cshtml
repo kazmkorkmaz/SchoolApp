@@ -1,0 +1,12 @@
+<!-- _ButtonsPartial.cshtml -->
+<div class="button-group" role="group">
+    <a class="custom-btn edit-btn" asp-action="Edit" asp-route-id="@Model.Id">
+        <i class="fas fa-edit"></i> Edit
+    </a>
+    <a class="custom-btn details-btn" asp-action="Details" asp-route-id="@Model.Id">
+        <i class="fa fa-info-circle"></i> Details
+    </a>
+    <button data-id="@Model.Id" class="custom-btn deleteBtn" type="button">
+        <i class="fa fa-trash"></i> Delete
+    </button>
+</div>
