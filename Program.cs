@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using SchoolApp.Entites;
+using SchoolApp.Data.Abstract;
+using SchoolApp.Data.EfCore;
+using SchoolApp.Entity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +11,12 @@ builder.Services.AddDbContext<SchoolAppDbContext>(options =>
 {
     options.UseSqlite(builder.Configuration.GetConnectionString("db_connection"));
 });
+
+builder.Services.AddScoped<IStudentRepository, EfStudentRepository>();
+builder.Services.AddScoped<ILecturerRepository, EfLecturerRepository>();
+builder.Services.AddScoped<ICourseRepository, EfCourseRepository>();
+builder.Services.AddScoped<IEnrollmentRepository, EfEnrollmentRepository>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

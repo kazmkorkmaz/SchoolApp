@@ -1,29 +1,36 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using SchoolApp.Entites;
+using SchoolApp.Data.Abstract;
+using SchoolApp.Entity;
 using SchoolApp.Models;
 
 namespace SchoolApp.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
-    private readonly SchoolAppDbContext _dbContext;
 
-    public HomeController(ILogger<HomeController> logger, SchoolAppDbContext dbContext)
+    private IStudentRepository _studentRepository;
+    private ILecturerRepository _lecturerRepository;
+    private ICourseRepository _courseRepository;
+    private IEnrollmentRepository _enrollmentRepository;
+
+
+    public HomeController(IStudentRepository studentRepository, ILecturerRepository lecturerRepository, ICourseRepository courseRepository, IEnrollmentRepository enrollmentRepository)
     {
-        _logger = logger;
-        _dbContext = dbContext;
+        _studentRepository = studentRepository;
+        _lecturerRepository = lecturerRepository;
+        _courseRepository = courseRepository;
+        _enrollmentRepository = enrollmentRepository;
     }
 
     public IActionResult Index()
     {
         HomeViewModel homeViewModel = new HomeViewModel
         {
-            StudentCount = _dbContext.Students.Count(),
-            LecturerCount = _dbContext.Lecturers.Count(),
-            CourseCount = _dbContext.Courses.Count(),
-            EnrolmentCount = _dbContext.Enrollments.Count(),
+            StudentCount = _studentRepository.Students.Count(),
+            LecturerCount = _lecturerRepository.Lecturers.Count(),
+            CourseCount = _courseRepository.Courses.Count(),
+            EnrolmentCount = _enrollmentRepository.Enrollments.Count(),
 
         };
         return View(homeViewModel);

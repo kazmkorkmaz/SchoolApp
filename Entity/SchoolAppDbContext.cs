@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace SchoolApp.Entites
+namespace SchoolApp.Entity
 {
     public class SchoolAppDbContext : DbContext
     {

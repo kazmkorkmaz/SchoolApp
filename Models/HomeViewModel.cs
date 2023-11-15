@@ -1,4 +1,4 @@
-using SchoolApp.Entites;
+using SchoolApp.Entity;
 
 namespace SchoolApp.Models
 {

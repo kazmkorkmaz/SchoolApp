@@ -1,4 +1,4 @@
-namespace SchoolApp.Entites
+namespace SchoolApp.Entity
 {
     public class Course
     {
