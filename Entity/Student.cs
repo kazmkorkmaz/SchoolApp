@@ -2,17 +2,11 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SchoolApp.Entity
 {
-    public class Student
+    public class Student : User
     {
-        public int Id { get; set; }
-
-        [Display(Name = "First Name")]
-        public string FirstName { get; set; } = null!;
-
-        [Display(Name = "Last Name")]
-        public string LastName { get; set; } = null!;
 
         [Display(Name = "School Enrollment Date")]
+        [Required]
         public DateTime SchoolEnrollementDate { get; set; }
         public ICollection<Enrollment> Enrollments { get; } = new List<Enrollment>();
 

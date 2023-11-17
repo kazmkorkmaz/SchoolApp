@@ -5,8 +5,8 @@ namespace SchoolApp.Data.Abstract
     public interface ILecturerRepository
     {
         IQueryable<Lecturer> Lecturers { get; }
-        void CreateLecturer(Lecturer lecturer);
-        void EditLecturer(Lecturer lecturer);
-        void EditLecturer(Lecturer lecturer, int lecturerId);
+        Task CreateLecturer(Lecturer lecturer);
+        Task EditLecturer(Lecturer lecturer);
+        Task DeleteLecturer(int id);
     }
 }

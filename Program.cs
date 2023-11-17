@@ -30,13 +30,13 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+app.UseAuthentication();
 
 app.UseRouting();
 
 app.UseAuthorization();
-AddDummyData.AddTestData(app);
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-
+AddDummyData.AddTestData(app);
 app.Run();

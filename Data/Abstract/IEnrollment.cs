@@ -5,8 +5,8 @@ namespace SchoolApp.Data.Abstract
     public interface IEnrollmentRepository
     {
         IQueryable<Enrollment> Enrollments { get; }
-        void CreateEnrollment(Enrollment enrollment);
-        void EditEnrollment(Enrollment enrollment);
-        void EditEnrollment(Enrollment enrollment, int enrollmentId);
+        Task CreateEnrollment(Enrollment enrollment);
+        Task EditEnrollment(Enrollment enrollment);
+        Task DeleteEnrollment(int id);
     }
 }

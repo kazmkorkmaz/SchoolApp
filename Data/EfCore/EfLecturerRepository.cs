@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using SchoolApp.Data.Abstract;
 using SchoolApp.Entity;
 
@@ -11,22 +12,35 @@ namespace SchoolApp.Data.EfCore
         {
             _dbContext = dbContext;
         }
-        public IQueryable<Lecturer> Lecturers => _dbContext.Lecturers;
+        public IQueryable<Lecturer> Lecturers => _dbContext.Lecturers.Where(s => s.isActive);
 
-
-        public void CreateLecturer(Lecturer lecturer)
+        public async Task CreateLecturer(Lecturer lecturer)
         {
-            throw new NotImplementedException();
+            _dbContext.Lecturers.Add(lecturer);
+            await _dbContext.SaveChangesAsync();
         }
 
-        public void EditLecturer(Lecturer lecturer)
+        public async Task DeleteLecturer(int id)
         {
-            throw new NotImplementedException();
+            var _lecturer = await _dbContext.Lecturers.FirstOrDefaultAsync(i => i.Id == id);
+
+            if (_lecturer != null)
+            {
+                _lecturer.isActive = false;
+                await _dbContext.SaveChangesAsync();
+            }
         }
 
-        public void EditLecturer(Lecturer lecturer, int lecturerId)
+        public async Task EditLecturer(Lecturer lecturer)
         {
-            throw new NotImplementedException();
+            var _lecturer = await _dbContext.Lecturers.FirstOrDefaultAsync(i => i.Id == lecturer.Id);
+
+            if (_lecturer != null)
+            {
+                _lecturer.FirstName = lecturer.FirstName;
+                _lecturer.LastName = lecturer.LastName;
+                await _dbContext.SaveChangesAsync();
+            }
         }
     }
 }

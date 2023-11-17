@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using SchoolApp.Data.Abstract;
 using SchoolApp.Entity;
 
@@ -12,21 +13,35 @@ namespace SchoolApp.Data.EfCore
             _dbContext = dbContext;
         }
 
-        public IQueryable<Enrollment> Enrollments => _dbContext.Enrollments;
+        public IQueryable<Enrollment> Enrollments => _dbContext.Enrollments.Where(s => s.isActive);
 
-        public void CreateEnrollment(Enrollment enrollment)
+        public async Task CreateEnrollment(Enrollment enrollment)
         {
-            throw new NotImplementedException();
+            _dbContext.Enrollments.Add(enrollment);
+            await _dbContext.SaveChangesAsync();
         }
 
-        public void EditEnrollment(Enrollment enrollment)
+        public async Task DeleteEnrollment(int id)
         {
-            throw new NotImplementedException();
+            var _enrollment = await _dbContext.Enrollments.FirstOrDefaultAsync(i => i.Id == id);
+
+            if (_enrollment != null)
+            {
+                _enrollment.isActive = false;
+                await _dbContext.SaveChangesAsync();
+            }
         }
 
-        public void EditEnrollment(Enrollment enrollment, int enrollmentId)
+        public async Task EditEnrollment(Enrollment enrollment)
         {
-            throw new NotImplementedException();
+            var _enrollment = await _dbContext.Enrollments.FirstOrDefaultAsync(i => i.Id == enrollment.Id);
+
+            if (_enrollment != null)
+            {
+                _enrollment.StudentId = enrollment.StudentId;
+                _enrollment.CourseId = enrollment.CourseId;
+                await _dbContext.SaveChangesAsync();
+            }
         }
     }
 }

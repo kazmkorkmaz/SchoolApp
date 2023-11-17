@@ -5,8 +5,8 @@ namespace SchoolApp.Data.Abstract
     public interface ICourseRepository
     {
         IQueryable<Course> Courses { get; }
-        void CreateCourse(Course course);
-        void EditCourse(Course course);
-        void EditCourse(Course course, int courseId);
+        Task CreateCourse(Course course);
+        Task EditCourse(Course course);
+        Task DeleteCourse(int id);
     }
 }
